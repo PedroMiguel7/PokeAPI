@@ -1,0 +1,45 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+
+  .container-primary {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .loginCashier {
+      width: 26vw;
+      height: 65vh;
+      background: #1e2233;
+      border-radius: 8px;
+      padding: 30px;
+
+      h1 {
+        margin-top: 10px;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 54px;
+        color: white;
+      }
+
+      .forms {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+
+        button {
+          height: 50px;
+        }
+      }
+    }
+
+    .buttonTheme{
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+  }
+}
