@@ -1,4 +1,4 @@
 <main class="main">
-    <app-sidebar></app-sidebar>
+    <app-sidebar *ngIf="!pathLogin"></app-sidebar>
     <router-outlet></router-outlet>
 </main>
