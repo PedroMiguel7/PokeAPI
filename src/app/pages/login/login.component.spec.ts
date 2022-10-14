@@ -1,23 +1,20 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoginComponent } from './login.component';
+import { render, screen } from "@testing-library/angular";
+import { LoginComponent } from "./login.component";
 
-describe('LoginComponent', () => {
-  let component: LoginComponent;
-  let fixture: ComponentFixture<LoginComponent>;
+const sut = async () =>{
+  await render(LoginComponent, {})
+}
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ LoginComponent ]
-    })
-    .compileComponents();
+describe('AppComponent', () => {  
 
-    fixture = TestBed.createComponent(LoginComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  beforeEach( async () => {
+    await sut();
+  })
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+  it('should render the component', async () => {
+    const element = screen.getAllByTestId("rootmain")
+    expect(element).toBeTruthy();
+  })
+
+})
