@@ -5,18 +5,17 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LoginService {
-  users: USER[] = [
-    { nickname: "vinicius",
-      email: "vinicus@gmail.com",
-      senha: "amomiguel",
-      pokemonsFave: [],
-    },
+  static fazLogin(lU: import("../pages/login/login.interface").loginUSer | undefined) {
+    throw new Error('Method not implemented.');
+  }
+  user: USER = 
     { nickname: "larissa",
       email: "larissa@gmail.com",
       senha: "amomiguelTB",
       pokemonsFave: [],
-    },
-  ]
-  
-  constructor() { }
+    }
+
+  fazLogin(user?: any){
+    return this.user.email.includes(user.email)
+  }
 }

@@ -1,3 +1,4 @@
+import { loginUSer } from './login.interface';
 import { LoginService } from './../../services/login.service';
 import { USER } from './user.interface';
 import { Component, OnInit } from '@angular/core';
@@ -10,6 +11,7 @@ import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   user?: USER
+  lU?: loginUSer
 
   constructor(private LoginService: LoginService, private fb: UntypedFormBuilder) { }
 
@@ -22,7 +24,7 @@ export class LoginComponent implements OnInit {
   }
 
   fazLogin() {
-    console.log('fazLogin');
-    console.log(this.validateForm.value);
+    this.lU = this.validateForm.value;
+    this.LoginService.fazLogin(this.lU)
   }
 }
