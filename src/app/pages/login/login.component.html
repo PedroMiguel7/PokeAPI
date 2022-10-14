@@ -1,1 +1,18 @@
-<p>login works!</p>
+<div class="main">
+    <div class="container-primary">
+        <div class="loginCashier">
+            <img src="../../../assets/img/image 1.png" alt="">
+            <h1>
+                Comece a coletar pokémons!
+            </h1>
+            <form class="forms" [formGroup]="validateForm" (ngSubmit)="fazLogin()">
+                <input  formControlName="email" type="text" placeholder="Enter your email address" >
+                <input  formControlName="password" type="password" placeholder="Enter your password" >
+                <button type="submit">ENTRAR</button>
+            </form>
+        </div>
+        <div class="buttonTheme">
+            <app-theme-button></app-theme-button>
+        </div>
+    </div>
+</div>
