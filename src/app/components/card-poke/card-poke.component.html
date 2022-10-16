@@ -9,12 +9,10 @@
         <img src="" alt="pokemon">
     </div>
     <div class="infoPokemon">
-        <h3>Pikachu</h3>
-        <p>ID: 101</p>
-        <ul class="powers">
-            <li> aaaa </li>
-            <li> bbbb </li>
-            <li> cccc </li>
+        <h3>{{name}}</h3>
+        <p>ID: {{id}}</p>
+        <ul class="powers" >
+            <li *ngFor=" let types of types; index as i " [ngClass]="types.type.name === 'fire' ? 'fire' : types.type.name === 'water' ? 'water' : 'eletric'  " >{{types.type.name}}</li>
         </ul>
     </div>
     <div class="detalhePokemon">

@@ -39,9 +39,28 @@
   .powers {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+
     li {
       width: 3.51vw;
+      border-radius: 8px;
+      margin-right: 3px;
+      text-align: center;
+      padding: 1px;
+    }
+
+    .fire{
+        background-color: #ff3326;
+        color: white;
+    }
+
+    .eletric{
+        background-color: #ffbc05;
+        color: black;
+    }
+
+    .water{
+        background-color: #28aef3;
+        color: white;
     }
   }
 
