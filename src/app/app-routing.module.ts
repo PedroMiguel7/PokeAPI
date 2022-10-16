@@ -9,8 +9,8 @@ import { SearchComponent } from './pages/search/search.component';
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'favoritos', component: FavoritesComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'search', component: SearchComponent},
+  {path: 'todos', component: HomeComponent},
+  {path: 'procurar', component: SearchComponent},
   {path: '**', redirectTo: ''}
 ];
 
