@@ -9,6 +9,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ThemeButtonComponent } from './components/theme-button/theme-button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FavoritesComponent } from './pages/favorites/favorites.component';
+import { SearchComponent } from './pages/search/search.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     SidebarComponent,
     HomeComponent,
-    ThemeButtonComponent
+    ThemeButtonComponent,
+    FavoritesComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
