@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   }
 
   mostraTodos(){
-    this.ativo1 = !this.ativo1;
+    this.ativo1 = true;
     this.ativo2 = false;
     this.ativo3 = false;
     this.ativo4 = false;
@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
 
   mostraFire(){
     this.ativo1 = false;
-    this.ativo2 = !this.ativo2;
+    this.ativo2 = true;
     this.ativo3 = false;
     this.ativo4 = false;
   }
@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
   mostraEletric(){
     this.ativo1 = false;
     this.ativo2 = false;
-    this.ativo3 = !this.ativo3;
+    this.ativo3 = true;
     this.ativo4 = false;
   }
 
@@ -42,6 +42,6 @@ export class HomeComponent implements OnInit {
     this.ativo1 = false;
     this.ativo2 = false;
     this.ativo3 = false;
-    this.ativo4 = !this.ativo4;
+    this.ativo4 = true;
   }
 }

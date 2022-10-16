@@ -1,0 +1,64 @@
+.card {
+  width: 11.46vw;
+  height: 33.01vh;
+  background-color: var(--component);
+  padding: 7px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.fav {
+  display: flex;
+  justify-content: flex-end;
+  background-color: transparent;
+}
+
+.imgPokemon {
+  display: flex;
+  justify-content: center;
+  height: 8.39vh;
+}
+
+.infoPokemon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  margin-top: 6px;
+
+  h3 {
+    color: var(--text-color);
+    margin-bottom: 7px;
+  }
+
+  p {
+    color: var(--text-menu);
+    margin-bottom: 7px;
+  }
+
+  .powers {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    li {
+      width: 3.51vw;
+    }
+  }
+
+}
+
+.detalhePokemon {
+  width: 90%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  margin-bottom: 10px;
+
+  .detalha {
+    height: 4.48vh;
+    width: 100%;
+    border-radius: 8px;
+    background-color: var(--primarybrisa);
+  }
+}
