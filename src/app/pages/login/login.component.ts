@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     return (
       this.lU = this.validateForm.value,
       this.LoginService.fazLogin(this.lU),
-      this.router.navigate(['/home'])
+      this.router.navigate(['/favoritos'])
     )
   }
 }

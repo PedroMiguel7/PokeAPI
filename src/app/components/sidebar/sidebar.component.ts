@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  iconFav(){
+    this.router.navigate(['/favoritos'])
+  }
+
+  iconEve(){
+    this.router.navigate(['/todos'])
+  }
+  iconSea(){
+    this.router.navigate(['/procurar'])
+  }
+
+  logout(){
+    this.router.navigate(['/'])
   }
 
 }

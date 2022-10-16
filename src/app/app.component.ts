@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  template: `<app-sidebar *ngIf="false"></app-sidebar><router-outlet></router-outlet>`,
+  templateUrl: 'app-module.html',
+  styleUrls: ['app.component.scss']
 }) 
 export class AppComponent {
 
   constructor(private router: Router) { }
-  
-  pathLogin: boolean = false;
+
 }
