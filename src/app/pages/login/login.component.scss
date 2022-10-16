@@ -8,9 +8,10 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
 
     .loginCashier {
-      width: 26vw;
+      width: 28vw;
       height: 65vh;
       background: #1e2233;
       border-radius: 8px;
@@ -27,19 +28,58 @@
       }
 
       .forms {
+        margin-top: 9.83vh;
         display: flex;
         flex-direction: column;
         padding: 10px;
 
+        input {
+          outline: unset;
+          height: 5vh;
+          padding: 20px;
+          margin-bottom: 4.21vh;
+          border: 1px solid #3B97D9;
+          border-radius: 8px;
+          font-weight: 500;
+          font-size: 22.5px;
+        }
+
+        input:focus {
+          background-color: white;
+        }
+
+        input::placeholder {
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          color: #7D7E80;
+        }
+
         button {
-          height: 50px;
+          border-radius: 8px;
+          border: none;
+          margin-top: 2.81vh;
+          background-color: #3B97D9;
+          height: 7.55vh;
+          cursor: pointer;
+
+          h3 {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+            color: #1E1E1F;
+          }
         }
       }
     }
 
-    .buttonTheme{
-        align-items: flex-start;
-        margin-top: 20px;
+    .buttonTheme {
+      align-items: flex-start;
+      margin-top: 20px;
     }
   }
 }

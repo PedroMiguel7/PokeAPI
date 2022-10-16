@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'brisalabs';
 
+  constructor(private router: Router) { }
+  
   pathLogin: boolean = true;
-
-
 }
