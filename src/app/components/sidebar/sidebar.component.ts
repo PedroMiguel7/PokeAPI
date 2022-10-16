@@ -24,4 +24,8 @@ export class SidebarComponent implements OnInit {
     this.router.navigate(['/procurar'])
   }
 
+  logout(){
+    this.router.navigate(['/'])
+  }
+
 }
