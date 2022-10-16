@@ -1,1 +1,12 @@
-<p>home works!</p>
+
+<div class="main">
+    <div class="filtros">
+        <button [ngClass]="ativo1 ? 'active' : ''" (click)="mostraTodos()">TODOS</button>
+        <button [ngClass]="ativo2 ? 'active' : ''" (click)="mostraFire()">FIRE</button>
+        <button [ngClass]="ativo3 ? 'active' : ''" (click)="mostraEletric()">ELETRIC</button>
+        <button [ngClass]="ativo4 ? 'active' : ''" (click)="mostraWater()">WATER</button>
+    </div>
+    <div class="pokemons">
+        aaa
+    </div>
+</div>
