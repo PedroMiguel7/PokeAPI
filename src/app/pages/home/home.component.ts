@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { PokemonsService } from 'src/app/services/api/pokemons.service';
 
 @Component({
   selector: 'app-home',
@@ -6,16 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  POKEMONN!: any;
+   @Output() POKEMON!: any;
+
   ativo1: boolean = true;
   ativo2: boolean = false;
   ativo3: boolean = false;
   ativo4: boolean = false;
 
 
-  constructor() { }
+  constructor(private POKEMONS: PokemonsService) { }
 
   ngOnInit(): void {
+    this.POKEMONS.pokemons('pokemon')
+    .subscribe( (res: any): any => {
+      this.POKEMONN = res;
+      console.log(res)
+    })
   }
+
 
   mostraTodos(){
     this.ativo1 = true;

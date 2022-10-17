@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FavoritesComponent } from './pages/favorites/favorites.component';
 import { SearchComponent } from './pages/search/search.component';
 import { CardPokeComponent } from './components/card-poke/card-poke.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { CardPokeComponent } from './components/card-poke/card-poke.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     NoopAnimationsModule,
     FormsModule,
     ReactiveFormsModule
