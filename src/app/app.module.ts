@@ -11,6 +11,8 @@ import { ThemeButtonComponent } from './components/theme-button/theme-button.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FavoritesComponent } from './pages/favorites/favorites.component';
 import { SearchComponent } from './pages/search/search.component';
+import { CardPokeComponent } from './components/card-poke/card-poke.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,11 +23,13 @@ import { SearchComponent } from './pages/search/search.component';
     HomeComponent,
     ThemeButtonComponent,
     FavoritesComponent,
-    SearchComponent
+    SearchComponent,
+    CardPokeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     NoopAnimationsModule,
     FormsModule,
     ReactiveFormsModule

@@ -11,16 +11,19 @@
 }
 
 :root{
+  --primarybrisa: #ffcb05;
   --primary: #3B97D9;
   --body: #F5F7FA;
   --menu: #1E2233;
   --component: #ffff;
-  --text-menu: #ffff;
+  --text-menu: #87888C;
   --text-body: #DFE0E7;
   --text-theme: #1E1E1F;
+  --text-color: #000;
 }
 
 :root .dark-theme{
+  --primarybrisa: #ffcb05;
   --primary: #F56E28;
   --body: #1E1F28;
   --menu: #1E2233;
@@ -28,6 +31,7 @@
   --text-menu: #87888C;
   --text-body: #ffff;
   --text-theme: #ffff;
+  --text-color: #ffff;
 }
 
 body{
