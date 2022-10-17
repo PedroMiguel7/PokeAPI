@@ -1,5 +1,4 @@
 .main {
-  border: 1px solid red;
   padding-top: 90px;
   padding-left: 138px;
   padding-right: 138px;
@@ -28,5 +27,8 @@
 }
 
 .pokemons {
-
+    height: 700px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    overflow-y: scroll;
 }

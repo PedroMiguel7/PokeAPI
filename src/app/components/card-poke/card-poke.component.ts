@@ -8,9 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CardPokeComponent implements OnInit {
 
   @Input() POKEMON!: any;
-  name: string = this.POKEMON.name;
-  id: number = this.POKEMON.id;
-  types: any = this.POKEMON.types;
+  name!: string;
+  id!: number;
+  types!: any;
   
   // name: string = 'aaaaaa';
   // id: number = 2;
@@ -20,6 +20,9 @@ export class CardPokeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.name = this.POKEMON.name;
+    this.id = this.POKEMON.id;
+    this.types = this.POKEMON.types;
   }
 
   favoritar(){

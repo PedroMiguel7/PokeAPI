@@ -6,13 +6,13 @@
         </button>
     </div>
     <div class="imgPokemon">
-        <img src="" alt="pokemon">
+        <img [src]="POKEMON.sprites.front_default" alt="pokemon">
     </div>
     <div class="infoPokemon">
         <h3>{{name}}</h3>
         <p>ID: {{id}}</p>
         <ul class="powers" >
-            <li *ngFor=" let types of types; index as i " [ngClass]="types.type.name === 'fire' ? 'fire' : types.type.name === 'water' ? 'water' : 'eletric'  " >{{types.type.name}}</li>
+            <li *ngFor=" let tp of types;" [ngClass]="tp.type.name" >{{tp.type.name}}</li>
         </ul>
     </div>
     <div class="detalhePokemon">

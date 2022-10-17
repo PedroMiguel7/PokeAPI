@@ -7,7 +7,6 @@
         <button [ngClass]="ativo4 ? 'active' : ''" (click)="mostraWater()">WATER</button>
     </div>
     <div class="pokemons">
-
-        <!-- <app-card-poke></app-card-poke> -->
+        <app-card-poke *ngFor="let PK of POKEFILTRADO" [POKEMON]="PK"></app-card-poke>
     </div>
 </div>

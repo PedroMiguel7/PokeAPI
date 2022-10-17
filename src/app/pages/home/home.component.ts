@@ -1,4 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
+import { PokemonService } from './../../services/api/pokemon.service';
 import { PokemonsService } from 'src/app/services/api/pokemons.service';
 
 @Component({
@@ -7,8 +8,9 @@ import { PokemonsService } from 'src/app/services/api/pokemons.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  POKEMONN!: any;
-   @Output() POKEMON!: any;
+  POKEMONGERAL: any[] = [];
+  POKEMONS: any[] = [];
+  POKEFILTRADO: any[] = [];
 
   ativo1: boolean = true;
   ativo2: boolean = false;
@@ -16,14 +18,20 @@ export class HomeComponent implements OnInit {
   ativo4: boolean = false;
 
 
-  constructor(private POKEMONS: PokemonsService) { }
+  constructor(private POKEMONserice: PokemonsService, private POKEMONZINHOserice: PokemonService) { }
 
   ngOnInit(): void {
-    this.POKEMONS.pokemons('pokemon')
+    this.POKEMONserice.pokemons('pokemon')
     .subscribe( (res: any): any => {
-      this.POKEMONN = res;
-      console.log(res)
+      this.POKEMONGERAL = res;
+      res.results.map((poke: any) => { 
+        this.POKEMONZINHOserice.pokemon(`${poke.url}`).subscribe( (req: any) => {
+          this.POKEMONS.push(req)
+        })
+      })
+      this.mostraTodos();
     })
+
   }
 
 
@@ -32,6 +40,7 @@ export class HomeComponent implements OnInit {
     this.ativo2 = false;
     this.ativo3 = false;
     this.ativo4 = false;
+    this.POKEFILTRADO= this.POKEMONS
   }
 
   mostraFire(){
@@ -39,6 +48,9 @@ export class HomeComponent implements OnInit {
     this.ativo2 = true;
     this.ativo3 = false;
     this.ativo4 = false;
+    this.POKEFILTRADO = this.POKEMONS.filter((t: any) => t.types[0].type.name === 'fire' || t.types[1]?.type.name === 'fire' )
+    // this.POKEFILTRADO = this.POKEMONS.map((t: any) => (t.types).filter((p: any) => p.type.name === 'fire'))
+    console.log(this.POKEFILTRADO)
   }
 
   mostraEletric(){
@@ -46,6 +58,7 @@ export class HomeComponent implements OnInit {
     this.ativo2 = false;
     this.ativo3 = true;
     this.ativo4 = false;
+    this.POKEFILTRADO = this.POKEMONS.filter((t: any) => t.types[0].type.name === 'eletric' || t.types[1]?.type.name === 'eletric' )
   }
 
   mostraWater(){
@@ -53,5 +66,6 @@ export class HomeComponent implements OnInit {
     this.ativo2 = false;
     this.ativo3 = false;
     this.ativo4 = true;
+    this.POKEFILTRADO = this.POKEMONS.filter((t: any) => t.types[0].type.name === 'water' || t.types[1]?.type.name === 'water' )
   }
 }

@@ -1,3 +1,4 @@
+import { tap } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -13,6 +14,6 @@ export class PokemonService {
   };
 
   pokemon(url: any) {
-    return this.HttpClient.get(`${url}`).toPromise();
+    return this.HttpClient.get(`${url}`).pipe(tap(X => X));
   }
 }
