@@ -12,7 +12,10 @@
 .fav {
   display: flex;
   justify-content: flex-end;
-  background-color: transparent;
+  
+  button {
+    background-color: transparent;
+  }
 }
 
 .imgPokemon {
