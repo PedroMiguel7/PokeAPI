@@ -13,8 +13,8 @@ describe('AppComponent', () => {
   })
 
   it('should render the component', async () => {
-    const element = screen.getAllByTestId("rootmain")
+    const element = screen.getByTestId("rootmain")
     expect(element).toBeTruthy();
   })
-
+  
 })
