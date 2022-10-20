@@ -1,0 +1,7 @@
+<ngt-canvas [scene]="{ }">
+  <ngt-ambient-light [intensity]="0.5"></ngt-ambient-light>
+  <ngt-primitive
+    *ngIf="poke$ | async as poke"
+    [object]="poke.scene"
+  ></ngt-primitive>
+</ngt-canvas>
