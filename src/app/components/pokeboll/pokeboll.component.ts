@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgtGLTFLoader }from '@angular-three/soba/loaders' 
-
 @Component({
   selector: 'app-pokeboll',
   templateUrl: './pokeboll.component.html',
@@ -8,11 +6,10 @@ import { NgtGLTFLoader }from '@angular-three/soba/loaders'
 })
 export class PokebollComponent implements OnInit {
 
-  #color = '';
 
-  constructor(private ngtGlTFloaderService: NgtGLTFLoader) { }
 
-  poke$ = this.ngtGlTFloaderService.load('../../../assets/img/poke_ball.glb');
+  constructor() { }
+
 
   ngOnInit(): void {
   }
