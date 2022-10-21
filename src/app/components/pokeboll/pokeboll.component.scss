@@ -2,21 +2,22 @@
   display: flex;
 }
 
-.pokebola_abre {
-  display: flex;
-  transform: rotateY(180deg);
-  border: 1px solid red;
-  
-}
-
 .pokebola {
-  position: absolute;
   display: flex;
   animation: animPoke 3s ease-in-out;
   animation-fill-mode: forwards;
-  .pokebola:after {
-    display: none;
-  }
+}
+
+.pokebola_abre {
+  display: flex;
+  margin-right: 400px;
+  transform: rotateY(180deg);
+}
+
+.pokemon {
+  display: flex;
+  margin-right: 900px;
+  transform: rotateY(180deg);
 }
 
 @keyframes animPoke {
@@ -27,11 +28,7 @@
   50% {
     transform: translateY(300px) translateX(-300px);
   }
-  //   99% {
-  //     opacity: 1;
-  //   }
   100% {
     transform: translateY(-100px) translateX(-300px);
-    // opacity: 0;
   }
 }
