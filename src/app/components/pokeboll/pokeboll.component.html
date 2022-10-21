@@ -1,4 +1,4 @@
 <div class="arena">
-  <img class="pokebola" src="../../../assets/gif/pokeboll_rola.gif" alt="" width="180px" height="180px">
-  <img class="pokebola_abre" src="../../../assets/gif/pokeboll_livre.gif" alt="" width="280px" height="280px">
+  <img *ngIf="Pokebola" class="pokebola" src="../../../assets/gif/pokeboll_rola.gif" alt="" width="180px" height="180px">
+  <img *ngIf="!Pokebola" class="pokebola_abre" src="../../../assets/gif/pokeboll_livre.gif" alt="" width="280px" height="280px">
 </div>

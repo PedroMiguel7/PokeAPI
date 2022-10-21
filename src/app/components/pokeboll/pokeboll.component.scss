@@ -3,11 +3,14 @@
 }
 
 .pokebola_abre {
+  display: flex;
   transform: rotateY(180deg);
   border: 1px solid red;
+  
 }
 
 .pokebola {
+  position: absolute;
   display: flex;
   animation: animPoke 3s ease-in-out;
   animation-fill-mode: forwards;
