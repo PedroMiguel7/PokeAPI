@@ -13,7 +13,13 @@ import { FavoritesComponent } from './pages/favorites/favorites.component';
 import { SearchComponent } from './pages/search/search.component';
 import { CardPokeComponent } from './components/card-poke/card-poke.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PokebollComponent } from './components/pokeboll/pokeboll.component';
 
+import { NgtPiPipeModule, NgtCursorModule, NgtCanvasModule } from '@angular-three/core';
+import { NgtAmbientLightModule, NgtPointLightModule } from '@angular-three/core/lights';
+import { NgtPrimitive, NgtPrimitiveModule } from '@angular-three/core/primitive';
+import { NgtSobaLoaderModule } from '@angular-three/soba/loaders';
+import { NgtSobaOrbitControlsModule } from '@angular-three/soba/controls';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     ThemeButtonComponent,
     FavoritesComponent,
     SearchComponent,
-    CardPokeComponent
+    CardPokeComponent,
+    PokebollComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,16 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     NoopAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgtCursorModule,
+    NgtSobaLoaderModule,
+    NgtPrimitiveModule,
+    NgtSobaOrbitControlsModule,
+    NgtAmbientLightModule,
+    NgtPointLightModule,
+    NgtPiPipeModule, 
+    NgtCanvasModule,
+    NgtPrimitive
   ],
   providers: [ FormBuilder],
   bootstrap: [AppComponent]

@@ -1,0 +1,34 @@
+.arena {
+  display: flex;
+}
+
+.pokebola {
+  display: flex;
+  animation: animPoke 3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.pokebola_abre {
+  display: flex;
+  margin-right: 400px;
+  transform: rotateY(180deg);
+}
+
+.pokemon {
+  display: flex;
+  margin-right: 900px;
+  transform: rotateY(180deg);
+}
+
+@keyframes animPoke {
+  0% {
+    animation-delay: 1000ms;
+    transform: translateY(-600px) translateX(-300px);
+  }
+  50% {
+    transform: translateY(300px) translateX(-300px);
+  }
+  100% {
+    transform: translateY(-100px) translateX(-300px);
+  }
+}
