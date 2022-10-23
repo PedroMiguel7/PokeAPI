@@ -11,6 +11,10 @@ export class PokebollComponent implements OnInit {
   Pokebola_abre?: boolean = false;
   Pokemon?: boolean = false;
 
+  Pokebola2?: boolean = false;
+  Pokebola_abre2?: boolean = false;
+  Pokemon2?: boolean = false;
+
   constructor() { }
 
 
