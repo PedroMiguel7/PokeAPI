@@ -10,13 +10,13 @@
 
 .pokebola_abre {
   display: flex;
-  margin-right: 400px;
+  margin-right: 200px;
   transform: rotateY(180deg);
 }
 
 .pokemon {
   display: flex;
-  margin-right: 900px;
+  margin-right: 600px;
   transform: rotateY(180deg);
 }
 
@@ -30,5 +30,34 @@
   }
   100% {
     transform: translateY(-100px) translateX(-300px);
+  }
+}
+
+// secund ball
+
+.pokebola2 {
+  display: flex;
+  animation: animPoke2 3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.pokebola_abre2 {
+  display: flex;
+}
+
+.pokemon2 {
+  display: flex;
+}
+
+@keyframes animPoke2 {
+  0% {
+    animation-delay: 1500ms;
+    transform: translateY(600px) translateX(300px);
+  }
+  50% {
+    transform: translateY(300px) translateX(300px);
+  }
+  100% {
+    transform: translateY(-100px) translateX(100px);
   }
 }

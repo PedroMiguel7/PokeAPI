@@ -18,6 +18,7 @@
     </div>
 
     <div class="pokeball3D">
-        <app-pokeboll></app-pokeboll>
+        <button *ngIf="isShowButton" (click)="fadeInOut()">lutem</button>
+        <app-pokeboll *ngIf="isShow" @fadeIn></app-pokeboll>
     </div>
 </div>
