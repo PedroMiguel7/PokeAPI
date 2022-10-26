@@ -68,7 +68,7 @@ export class UserController {
     }
 
     const newFav = favRepository.create({
-      user_id: user_id,
+      user_id:  Number(user_id),
       pokemon_id: pokemon_id,
     });
 
@@ -77,18 +77,17 @@ export class UserController {
     return res.status(201).json(newFav);
   }
 
-  // async listFav(req: Request, res: Response) {
-  //   const { user_id } = req.params;
+  async listFav(req: Request, res: Response) {
+    const user_id  = Number(req.params.user_id);
+    const ID = user_id
 
-  //   const user = await userRepository.findOneBy({ id: Number(user_id) });
-  //   if (!user) {
-  //     throw new BadRequestError("User not found");
-  //   }
+    const user = await userRepository.findOneBy({ id: Number(user_id) });
+    if (!user) {
+      throw new BadRequestError("User not found");
+    }
 
-  //   const Favorites = await favRepository.findBy({
-  //     where: { user_id: Number(user_id) },
-  //   });
+    const Favorites = await favRepository.findBy({ user_id: user_id});
 
-  //   return res.status(201).json(Favorites);
-  // }
+    return res.status(201).json(Favorites);
+  }
 }

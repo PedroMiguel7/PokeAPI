@@ -10,7 +10,7 @@ export class Fav {
   id: number;
 
   @Column({ type: "int" })
-  user_id: Number;
+  user_id: number;
 
   @Column({ type: "int" })
   pokemon_id: number;
