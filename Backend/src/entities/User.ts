@@ -1,9 +1,7 @@
-import { Fav } from "./Fav";
 import {
   Column,
   Entity,
   Index,
-  OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
 

@@ -1,8 +1,10 @@
 import Router from "express";
-import { SubjectController } from "./controllers/SubjectController";
+import { UserController } from "./controllers/UserController";
 
 const routes = Router();
 
-routes.post("/subject", new SubjectController().create);
+routes.post("/user", new UserController().create);
+
+routes.post("/user/:id/fav", new UserController().Favorite);
 
 export default routes;
