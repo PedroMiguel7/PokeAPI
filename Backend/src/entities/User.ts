@@ -10,12 +10,10 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Index({ unique: true })
-  @Column({ type: "text" })
+  @Column({ type: "text", unique: true })
   nickname: string;
 
-  @Index({ unique: true })
-  @Column({ type: "text" })
+  @Column({ type: "text", unique: true })
   email: string;
 
   @Column({ type: "text" })
