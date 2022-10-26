@@ -6,8 +6,13 @@ const routes = Router();
 
 routes.post("/", new UserController().Login);
 
-routes.post("/user", authMiddleware, new UserController().create);
+routes.use(authMiddleware);
 
-routes.post("/user/:id/fav", authMiddleware, new UserController().Favorite);
+routes.post("/user", new UserController().create);
+
+
+routes.post("/user/:id/fav", new UserController().Favorite);
+routes.get("/user/:id/fav", new UserController().listFav);
+routes.delete("/user/:id/fav/:id", new UserController().Desfav)
 
 export default routes;

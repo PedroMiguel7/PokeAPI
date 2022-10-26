@@ -68,7 +68,7 @@ export class UserController {
     }
 
     const newFav = favRepository.create({
-      user_id:  Number(user_id),
+      user_id: Number(user_id),
       pokemon_id: pokemon_id,
     });
 
@@ -78,16 +78,29 @@ export class UserController {
   }
 
   async listFav(req: Request, res: Response) {
-    const user_id  = Number(req.params.user_id);
-    const ID = user_id
+    const { user_id } = req.params;
 
     const user = await userRepository.findOneBy({ id: Number(user_id) });
     if (!user) {
       throw new BadRequestError("User not found");
     }
 
-    const Favorites = await favRepository.findBy({ user_id: user_id});
+    const Favorites = await favRepository.findBy({ user_id: Number(user_id) });
 
     return res.status(201).json(Favorites);
+  }
+
+  async Desfav(req: Request, res: Response) {
+    const { pokemon_id, user_id } = req.params;
+
+    const pokemon = await favRepository.findOneBy({
+      user_id: Number(user_id),
+      pokemon_id: Number(pokemon_id),
+    });
+    if (!pokemon) {
+      throw new BadRequestError("Pokemon_fav not found");
+    }
+
+    return res.status(201).json("sucess delete");
   }
 }
