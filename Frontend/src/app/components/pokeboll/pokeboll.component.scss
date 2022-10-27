@@ -17,6 +17,7 @@
 .pokemon {
   display: flex;
   margin-right: 600px;
+  margin-top: 85px;
   transform: rotateY(180deg);
 }
 
@@ -29,7 +30,7 @@
     transform: translateY(300px) translateX(-300px);
   }
   100% {
-    transform: translateY(-100px) translateX(-300px);
+    transform: translateY(0px) translateX(-300px);
   }
 }
 
