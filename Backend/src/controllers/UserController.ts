@@ -57,6 +57,16 @@ export class UserController {
     return res.status(201).json(user);
   }
 
+  async dellUser(req: Request, res: Response) {
+    const { user_id } = req.params;
+    const user = await userRepository.findOneBy({ id: Number(user_id) });
+    if (!user) {
+      throw new BadRequestError("User not found");
+    }
+    userRepository.delete(user_id);
+    return res.status(200).json({ message: "sucess delete" });
+  }
+
   async Favorite(req: Request, res: Response) {
     const { user_id } = req.params;
     const { pokemon_id } = req.body;
@@ -97,10 +107,13 @@ export class UserController {
       user_id: Number(user_id),
       pokemon_id: Number(pokemon_id),
     });
+
     if (!pokemon) {
       throw new BadRequestError("Pokemon_fav not found");
     }
 
-    return res.status(201).json("sucess delete");
+    favRepository.delete(pokemon.id);
+
+    return res.status(200).json("sucess delete");
   }
 }

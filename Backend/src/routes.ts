@@ -6,13 +6,11 @@ const routes = Router();
 
 routes.post("/", new UserController().Login);
 
-routes.use(authMiddleware);
-
 routes.post("/user", new UserController().create);
+routes.delete("/user/:user_id", new UserController().dellUser);
 
-
-routes.post("/user/:id/fav", new UserController().Favorite);
-routes.get("/user/:id/fav", new UserController().listFav);
-routes.delete("/user/:id/fav/:id", new UserController().Desfav)
+routes.post("/user/:user_id/fav", new UserController().Favorite);
+routes.get("/user/:user_id/fav", new UserController().listFav);
+routes.delete("/user/:user_id/fav/:pokemon_id", new UserController().Desfav);
 
 export default routes;
