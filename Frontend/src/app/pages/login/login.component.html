@@ -12,7 +12,7 @@
             <form data-testid="rootmain" class="forms" [formGroup]="validateForm" (ngSubmit)="fazLogin()">
                 <input  formControlName="email" type="text" placeholder="email address" >
                 <input  formControlName="password" type="password" placeholder="password" >
-                <button type="submit"> <h2>ENTRAR</h2></button>
+                <button (click)="fazLogin()" type="submit"> <h2>ENTRAR</h2></button>
             </form>
         </div>
     </div>

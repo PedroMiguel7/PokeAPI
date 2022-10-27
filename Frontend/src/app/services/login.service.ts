@@ -1,21 +1,20 @@
-import { USER } from './../pages/login/user.interface';
+import { loginUSer } from './../pages/login/login.interface';
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { API_PATH } from 'src/environments/environment.prod';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
-  static fazLogin(lU: import("../pages/login/login.interface").loginUSer | undefined) {
-    throw new Error('Method not implemented.');
-  }
-  user: USER = 
-    { nickname: "larissa",
-      email: "larissa@gmail.com",
-      senha: "amomiguelTB",
-      pokemonsFave: [],
-    }
+  constructor(private HttpClient: HttpClient) {}
 
-  fazLogin(user?: any){
-    return this.user.email.includes(user.email)
+  // Headers
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  };
+
+  fazLogin(user: any) {
+    return this.HttpClient.post<loginUSer>(`${API_PATH}/api/`, user).toPromise();
   }
 }

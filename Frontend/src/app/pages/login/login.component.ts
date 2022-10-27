@@ -8,46 +8,48 @@ import { trigger, transition, style, animate } from '@angular/animations';
 
 const enterTransition = transition(':enter', [
   style({
-    opacity: 0
+    opacity: 0,
   }),
-  animate('1s ease-in', style({opacity: 1})),
-])
-const FadeIn = trigger('fadeIn', [enterTransition])
+  animate('1s ease-in', style({ opacity: 1 })),
+]);
+const FadeIn = trigger('fadeIn', [enterTransition]);
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  animations: [FadeIn]
+  animations: [FadeIn],
 })
-
-
 export class LoginComponent implements OnInit {
-  user?: USER
-  lU?: loginUSer
+  user?: USER;
+  lU?: loginUSer;
 
   isShow = false;
   isShowButton = true;
-  
+
   fadeInOut(): void {
-    this.isShow = !this.isShow
+    this.isShow = !this.isShow;
     this.isShowButton = false;
   }
 
-  constructor(private router: Router, private LoginService: LoginService, private fb: UntypedFormBuilder) { }
+  constructor(
+    private router: Router,
+    private LoginService: LoginService,
+    private fb: UntypedFormBuilder
+  ) {}
 
-  validateForm!: UntypedFormGroup
+  validateForm!: UntypedFormGroup;
   ngOnInit(): void {
     this.validateForm = this.fb.group({
       email: [],
-      password: []
-    })
+      password: [],
+    });
   }
 
   fazLogin() {
-    return (
-      this.lU = this.validateForm.value,
-      this.LoginService.fazLogin(this.lU),
-      this.router.navigate(['/favoritos'])
-    )
+    (this.lU = this.validateForm.value),
+      this.LoginService.fazLogin(this.lU).then((res: any): any => {
+        localStorage.setItem('access_token', res.token);
+        this.router.navigate(['/favoritos']);
+      });
   }
 }
