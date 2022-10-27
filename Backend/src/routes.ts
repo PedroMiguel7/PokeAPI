@@ -6,6 +6,8 @@ const routes = Router();
 
 routes.post("/", new UserController().Login);
 
+routes.use(authMiddleware)
+
 routes.post("/user", new UserController().create);
 routes.delete("/user/:user_id", new UserController().dellUser);
 

@@ -114,6 +114,6 @@ export class UserController {
 
     favRepository.delete(pokemon.id);
 
-    return res.status(200).json("sucess delete");
+    return res.status(200).json({message: "sucess delete"});
   }
 }
