@@ -1,24 +1,35 @@
 <div class="main">
-    <div id="stars"></div>
-    <div id="stars2"></div>
-    <div id="stars3"></div>
-     
-    <div class="container-primary">
-        <div class="loginCashier">
-            <img src="../../../assets/img/image 1.png" alt="" >
-            <h1>
-                Comece a coletar pokémons!
-            </h1>
-            <form data-testid="rootmain" class="forms" [formGroup]="validateForm" (ngSubmit)="fazLogin()">
-                <input  formControlName="email" type="text" placeholder="email address" >
-                <input  formControlName="password" type="password" placeholder="password" >
-                <button (click)="fazLogin()" type="submit"> <h2>ENTRAR</h2></button>
-            </form>
-        </div>
-    </div>
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
 
-    <div class="pokeball3D">
-        <button *ngIf="isShowButton" (click)="fadeInOut()">lutem</button>
-        <app-pokeboll *ngIf="isShow" @fadeIn></app-pokeboll>
+  <div class="container-primary">
+    <div class="loginCashier">
+      <img src="../../../assets/img/image 1.png" alt="" />
+      <h1>Comece a coletar pokémons!</h1>
+      <form
+        data-testid="rootmain"
+        class="forms"
+        [formGroup]="validateForm"
+        (ngSubmit)="fazLogin()"
+      >
+        <input
+          formControlName="email"
+          type="text"
+          placeholder="email address"
+        />
+        <input
+          formControlName="password"
+          type="password"
+          placeholder="password"
+        />
+        <button (click)="fazLogin()" type="submit"><h2>ENTRAR</h2></button>
+      </form>
     </div>
+  </div>
+
+  <div class="pokeball3D">
+    <button *ngIf="isShowButton" (click)="fadeInOut()">lutem</button>
+    <app-pokeboll *ngIf="isShow" @fadeIn></app-pokeboll>
+  </div>
 </div>
