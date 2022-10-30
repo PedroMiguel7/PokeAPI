@@ -4,31 +4,30 @@
   padding-right: 138px;
 }
 
-.filtros{
-    margin-bottom: 38px;
-    display: flex;
-    button{
-        margin-right: 8px;
-        width: 10.7vw;
-        padding: 12px;
-        border-radius: 8px;
-        background-color: transparent;
-        border: 1px solid #6b6868;
+.filtros {
+  margin-bottom: 38px;
+  display: flex;
+  button {
+    margin-right: 8px;
+    width: 10.7vw;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid #6b6868;
 
-        font-family: Poppins;
-        font-weight: 500;
-        size: 12px;
-        color: #343232;
-    }
-    .active {
-        background-color: var(--primarybrisa);
-    }
-
+    font-family: Poppins;
+    font-weight: 500;
+    size: 12px;
+    color: #343232;
+  }
+  .active {
+    background-color: var(--primarybrisa);
+  }
 }
 
 .pokemons {
-    height: 700px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    overflow-y: scroll;
+  height: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  overflow-y: scroll;
 }
