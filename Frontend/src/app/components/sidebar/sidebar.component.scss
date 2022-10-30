@@ -10,8 +10,8 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  
-  img{
+
+  img {
     width: 75px;
     height: 30px;
   }
@@ -32,15 +32,15 @@
   }
 
   .logout {
-        border-radius: 8px;
-        border: 1px solid #4B4B4D;
-        margin-top: 20px;
-        background-color: transparent;
-        width: 8vw;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        padding: 4px;
+    border-radius: 8px;
+    border: 1px solid #4b4b4d;
+    margin-top: 20px;
+    background-color: transparent;
+    width: 8vw;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 4px;
   }
 }
