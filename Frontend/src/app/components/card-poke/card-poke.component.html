@@ -1,21 +1,23 @@
 <div class="card">
-    <div class="fav">
-        <button (click)="favoritar()">
-            <img *ngIf="!fav" src="../../../assets/img/heart.png" alt="">
-            <img *ngIf="fav" src="../../../assets/img/heart (1).png" alt="">
-        </button>
-    </div>
-    <div class="imgPokemon">
-        <img [src]="POKEMON.sprites.front_default" alt="pokemon">
-    </div>
-    <div class="infoPokemon">
-        <h3>{{name}}</h3>
-        <p>ID: {{id}}</p>
-        <ul class="powers" >
-            <li *ngFor=" let tp of types;" [ngClass]="tp.type.name" >{{tp.type.name}}</li>
-        </ul>
-    </div>
-    <div class="detalhePokemon">
-        <button class="detalha">Ver Detalhes</button>
-    </div>
+  <div class="fav">
+    <button (click)="favoritar()">
+      <img *ngIf="!fav" src="../../../assets/img/heart.png" alt="" />
+      <img *ngIf="fav" src="../../../assets/img/heart (1).png" alt="" />
+    </button>
+  </div>
+  <div class="imgPokemon">
+    <img [src]="POKEMON.sprites.front_default" alt="pokemon" />
+  </div>
+  <div class="infoPokemon">
+    <h3>{{ name }}</h3>
+    <p>ID: {{ id }}</p>
+    <ul class="powers">
+      <li *ngFor="let tp of types" [ngClass]="tp.type.name">
+        {{ tp.type.name }}
+      </li>
+    </ul>
+  </div>
+  <div class="detalhePokemon">
+    <button class="detalha">Ver Detalhes</button>
+  </div>
 </div>
