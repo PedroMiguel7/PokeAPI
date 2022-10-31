@@ -15,6 +15,6 @@ export class LoginService {
   };
 
   fazLogin(user: any) {
-    return this.HttpClient.post<loginUSer>(`${API_PATH}/api/`, user).toPromise();
+    return this.HttpClient.post<loginUSer>(`${API_PATH}/`, user).toPromise();
   }
 }
