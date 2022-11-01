@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
 
   fazLogin() {
     (this.lU = this.validateForm.value),
-      this.LoginService.fazLogin(this.lU).then((res: any): any => {
+      this.LoginService.fazLogin(this.lU).subscribe((res: any): any => {
         localStorage.setItem('access_token', res.token);
         this.router.navigate(['/favoritos']);
       });
