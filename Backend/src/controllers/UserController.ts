@@ -14,12 +14,10 @@ export class UserController {
       if (!user) {
         throw new Error("Invalid email or password");
       }
-
       const varifypass = await bcrypt.compare(password, user.password);
       if (!varifypass) {
         throw new Error("Invalid email or password");
       }
-
       const token = jwt.sign(
         { id: user.id, nickname: user.nickname, email: user.email },
         process.env.JWT_PASS ?? "",
