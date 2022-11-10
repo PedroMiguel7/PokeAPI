@@ -3,6 +3,7 @@ import { userRepository } from "./../repositories/userRepository";
 import { Response } from "express";
 import { Request } from "express";
 import bcrypt from "bcrypt";
+import { Console } from "console";
 
 export class UserController {
   async CreateUser(req: Request, res: Response) {
@@ -61,6 +62,10 @@ export class UserController {
     try {
       const { user_id } = req.params;
       const { nickname, email } = req.body;
+      console.log("🚀 ~ file: UserController.ts ~ line 65 ~ UserController ~ UpdateUser ~ req.body", req.body)
+      console.log("🚀 ~ file: UserController.ts ~ line 65 ~ UserController ~ UpdateUser ~ email ", email )
+      console.log("🚀 ~ file: UserController.ts ~ line 65 ~ UserController ~ UpdateUser ~ nickname", nickname)
+
 
       const user = await userRepository.findOneBy({ id: Number(user_id) });
 
@@ -68,14 +73,20 @@ export class UserController {
         throw new BadRequestError("User not found");
       }
 
-      var userUp = user;
-      userUp.nickname = nickname ? nickname : user.nickname;
-      userUp.email = email ? email : user.email;
-
+      
+      let nicknameUp = nickname
+      let emailUp = email
+      
+      console.log(emailUp);
       // funcao errada, ainda...
-      await userRepository.update(user, userUp);
+      await userRepository
+        .createQueryBuilder()
+        .update(user)
+        .set({ nickname: nicknameUp, email: emailUp })
+        .where(`id = ${user_id}`)
+        .execute();
 
-      const { password: _, ...userUpdate } = userUp;
+      const { password: _, ...userUpdate } = user;
 
       return res.status(200).json({ userUpdate });
     } catch (error: any) {
