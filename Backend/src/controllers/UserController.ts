@@ -5,7 +5,7 @@ import { Request } from "express";
 import bcrypt from "bcrypt";
 
 export class UserController {
-  async createUser(req: Request, res: Response) {
+  async CreateUser(req: Request, res: Response) {
     try {
       const { nickname, email, password } = req.body;
 
@@ -37,7 +37,7 @@ export class UserController {
     }
   }
 
-  async listUser(req: Request, res: Response) {
+  async ListUser(req: Request, res: Response) {
     try {
       const users = await userRepository.find();
 
@@ -57,7 +57,7 @@ export class UserController {
     }
   }
 
-  async updateUser(req: Request, res: Response) {
+  async UpdateUser(req: Request, res: Response) {
     try {
       const { user_id } = req.params;
       const { nickname, email } = req.body;
@@ -71,10 +71,10 @@ export class UserController {
       var userUp = user;
       userUp.nickname = nickname ? nickname : user.nickname;
       userUp.email = email ? email : user.email;
-      
+
       // funcao errada, ainda...
       await userRepository.update(user, userUp);
-      
+
       const { password: _, ...userUpdate } = userUp;
 
       return res.status(200).json({ userUpdate });
@@ -83,7 +83,7 @@ export class UserController {
     }
   }
 
-  async dellUser(req: Request, res: Response) {
+  async DelUser(req: Request, res: Response) {
     try {
       const { user_id } = req.params;
       const user = await userRepository.findOneBy({ id: Number(user_id) });

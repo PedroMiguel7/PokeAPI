@@ -29,7 +29,7 @@ export class FavController {
     }
   }
 
-  async listFav(req: Request, res: Response) {
+  async ListFav(req: Request, res: Response) {
     try {
       const { user_id } = req.params;
 
@@ -43,6 +43,31 @@ export class FavController {
       });
 
       return res.status(201).json(Favorites);
+    } catch (error: any) {
+      res.status(400).json({ message: "Deu ruim" });
+    }
+  }
+
+  async Updatefav(req: Request, res: Response) {
+    try {
+      const { id_pokemon, user_id } = req.params;
+      const { pokemon_id } = req.body;
+
+      const pokemon = await favRepository.findOneBy({
+        user_id: Number(user_id),
+        pokemon_id: Number(id_pokemon),
+      });
+
+      if (!pokemon) {
+        throw new BadRequestError("Pokemon_fav not found");
+      }
+
+      let pokemonUpdate = pokemon;
+      pokemonUpdate.pokemon_id = pokemon_id ? pokemon_id : pokemon.pokemon_id;
+
+      favRepository.update(pokemonUpdate, pokemon);
+
+      return res.status(200).json({ pokemonUpdate });
     } catch (error: any) {
       res.status(400).json({ message: "Deu ruim" });
     }
