@@ -30,4 +30,4 @@
 
 # Relationship of the Elements
 
-<img src="/src/img/BD.png" />
+<img src="./src/img/BD.png" />
