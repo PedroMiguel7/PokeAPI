@@ -1,4 +1,3 @@
-import { BadRequestError } from "./../helpers/api-erros";
 import { userRepository } from "./../repositories/userRepository";
 import { Response } from "express";
 import { Request } from "express";

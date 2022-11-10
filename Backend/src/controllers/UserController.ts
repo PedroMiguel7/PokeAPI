@@ -57,6 +57,32 @@ export class UserController {
     }
   }
 
+  async updateUser(req: Request, res: Response) {
+    try {
+      const { user_id } = req.params;
+      const { nickname, email } = req.body;
+
+      const user = await userRepository.findOneBy({ id: Number(user_id) });
+
+      if (!user) {
+        throw new BadRequestError("User not found");
+      }
+
+      var userUp = user;
+      userUp.nickname = nickname ? nickname : user.nickname;
+      userUp.email = email ? email : user.email;
+      
+      // funcao errada, ainda...
+      await userRepository.update(user, userUp);
+      
+      const { password: _, ...userUpdate } = userUp;
+
+      return res.status(200).json({ userUpdate });
+    } catch (error: any) {
+      res.status(400).json({ message: "Deu ruim" });
+    }
+  }
+
   async dellUser(req: Request, res: Response) {
     try {
       const { user_id } = req.params;

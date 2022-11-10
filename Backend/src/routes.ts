@@ -9,8 +9,9 @@ const routes = Router();
 routes.post("/", new LoginController().Login);
 
 routes.post("/user", new UserController().createUser);
-routes.delete("/user/:user_id", authMiddleware, new UserController().dellUser);
 routes.get("/user", authMiddleware, new UserController().listUser)
+routes.put("/user/:user_id", authMiddleware, new UserController().updateUser)
+routes.delete("/user/:user_id", authMiddleware, new UserController().dellUser);
 
 routes.post("/user/:user_id/fav", authMiddleware, new FavController().Favorite);
 routes.get("/user/:user_id/fav", authMiddleware, new FavController().listFav);
