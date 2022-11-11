@@ -17,7 +17,7 @@
 
 - It was developed with [NodeJs](https://nodejs.org/en/), [TypeORM](https://typeorm.io/) and [PostgreSQL](https://www.postgresql.org);
 - The API and Database are not being maintained yet.
-- Documentation and testing of routes has not yet been done.
+- Documentation and testing of routes was done in swagger [swagger](https://app.swaggerhub.com/apis/PedroMiguel7/pokedeks_backend/1.0.0).
 
 # Functionalities
 
