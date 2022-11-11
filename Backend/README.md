@@ -13,7 +13,7 @@
 
 # About the System
 
-- A system for Login and management of a user's pokemóns, the system must register Users and favorite Pokemóns, a user has Favorite Pokemóns
+- A system for Login and management of a user's pokemóns, the system must register Users and favorite Pokemóns, a user has Favorite Pokemóns.
 
 - It was developed with [NodeJs](https://nodejs.org/en/), [TypeORM](https://typeorm.io/) and [PostgreSQL](https://www.postgresql.org);
 - The API and Database are not being maintained yet.

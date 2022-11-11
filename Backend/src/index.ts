@@ -1,8 +1,13 @@
 import { AppDataSource } from "./data-source";
-import express, { application } from "express";
+import express from "express";
 import routes from "./routes";
 import { errorMiddleware } from "./middlewares/error";
 import cors from "cors";
+
+import swaggerJsDoc from "swagger-jsdoc";
+import swaggerUI from "swagger-ui-express";
+import swaggerOptions from "./swagger/swagger";
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
 AppDataSource.initialize().then(() => {
   const app = express();
@@ -10,8 +15,9 @@ AppDataSource.initialize().then(() => {
   app.use(express.json());
 
   app.use(cors());
-
+  
   app.use(routes);
+  app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
   app.use(errorMiddleware);
 
