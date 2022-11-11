@@ -47,7 +47,7 @@
  *          content:[]
  *     parameters:
  *          -   in: path
- *              name: id
+ *              name: user_id
  *              schema:
  *                  type: integer
  *              required: true
@@ -70,14 +70,14 @@
  *        - BearerAuth: []
  *     parameters:
  *          -   in: path
- *              name: id
+ *              name: user_id
  *              schema:
  *                  type: integer
  *              required: true
  *              description: the Id of user
  *     responses:
  *       200:
- *         description: usuário apagado com sucesso.
+ *         description: user deleted successfully.
  *       401:
  *          description: Unauthorized, please log in to continue
  */
