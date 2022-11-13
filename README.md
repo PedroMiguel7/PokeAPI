@@ -2,7 +2,6 @@
 
 <div align="center">
 	<img height="200" src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi.svg?sanitize=true" alt="PokeAPI">
-https://giffiles.alphacoders.com/140/14064.gif
 <br/>
 
 </div>
