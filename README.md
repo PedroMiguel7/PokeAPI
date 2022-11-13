@@ -6,9 +6,10 @@ https://giffiles.alphacoders.com/140/14064.gif
 <br/>
 
 </div>
-<div style="display: flex;">
+<div style="display: flex; justify-content: space-between;" align="center">
 	<img height="200" src="https://thumbs.gfycat.com/UnderstatedFlashyHumpbackwhale-max-1mb.gif" alt="PokeAPI">
-    <img height="200" src="http://pa1.narvii.com/6372/de84edaa46605fc9313d74dc3b6d55d25969ca3d_00.gif" alt="PokeAPI2">
+	<img height="200" src="https://giffiles.alphacoders.com/140/14064.gif" alt="PokeAPI3">
+	<img height="200" src="http://pa1.narvii.com/6372/de84edaa46605fc9313d74dc3b6d55d25969ca3d_00.gif" alt="PokeAPI2">
 
 
 <!-- [![build status](https://img.shields.io/circleci/project/github/PokeAPI/pokeapi/master.svg)](https://circleci.com/gh/PokeAPI/pokeapi)
