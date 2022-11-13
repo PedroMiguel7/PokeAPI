@@ -1,6 +1,13 @@
+<br/>
+
+<div align="center">
+	<img height="200" src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi.svg?sanitize=true" alt="PokeAPI">
+
+<br/>
+
+</div>
 <div style="display: flex;">
 	<img height="200" src="https://thumbs.gfycat.com/UnderstatedFlashyHumpbackwhale-max-1mb.gif" alt="PokeAPI">
-    <img height="200" src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi.svg?sanitize=true" alt="PokeAPI">
     <img height="200" src="http://pa1.narvii.com/6372/de84edaa46605fc9313d74dc3b6d55d25969ca3d_00.gif" alt="PokeAPI2">
 
 
