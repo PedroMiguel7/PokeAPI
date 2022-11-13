@@ -18,7 +18,6 @@ export class LoginService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
-
   fazLogin(user: any) {
     return this.HttpClient.post<loginUSer>(`${API_PATH}/`, user).pipe();
   }
