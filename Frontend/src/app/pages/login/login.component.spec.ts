@@ -29,7 +29,7 @@ describe('LoginComponent', () => {
   });
 
   it('should render the component', async () => {
-    const element = screen.getByTestId('rootmain');
+    const element = screen.getByTestId('rootlogin');
     expect(element).toBeTruthy();
   });
 });
