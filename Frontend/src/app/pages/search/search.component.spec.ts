@@ -1,22 +1,35 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SearchComponent } from './search.component';
+import { render, screen } from '@testing-library/angular';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import {
+  NoopAnimationsModule,
+  BrowserAnimationsModule,
+} from '@angular/platform-browser/animations';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+
+const sut = async () => {
+  await render(SearchComponent, {
+    imports: [
+      BrowserModule,
+      AppRoutingModule,
+      HttpClientModule,
+      NoopAnimationsModule,
+      FormsModule,
+      ReactiveFormsModule,
+      BrowserAnimationsModule,
+    ],
+  });
+};
 
 describe('SearchComponent', () => {
-  let component: SearchComponent;
-  let fixture: ComponentFixture<SearchComponent>;
-
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [SearchComponent],
-    }).compileComponents();
-
-    fixture = TestBed.createComponent(SearchComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    await sut();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should render the component', async () => {
+    const element = screen.getByTestId('rootsearch');
+    expect(element).toBeTruthy();
   });
 });
