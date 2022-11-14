@@ -1,22 +1,36 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SidebarComponent } from './sidebar.component';
+import { render, screen } from '@testing-library/angular';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import {
+  NoopAnimationsModule,
+  BrowserAnimationsModule,
+} from '@angular/platform-browser/animations';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+
+const sut = async () => {
+  await render(SidebarComponent, {
+    componentProperties: { showSidebar: true },
+    imports: [
+      BrowserModule,
+      AppRoutingModule,
+      HttpClientModule,
+      NoopAnimationsModule,
+      FormsModule,
+      ReactiveFormsModule,
+      BrowserAnimationsModule,
+    ],
+  });
+};
 
 describe('SidebarComponent', () => {
-  let component: SidebarComponent;
-  let fixture: ComponentFixture<SidebarComponent>;
-
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [SidebarComponent],
-    }).compileComponents();
-
-    fixture = TestBed.createComponent(SidebarComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    await sut();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should render the component', async () => {
+    const element = screen.getByTestId('rootsidebar');
+    expect(element).toBeTruthy();
   });
 });

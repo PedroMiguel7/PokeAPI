@@ -1,4 +1,4 @@
-<button *ngIf="false" class="tema" type="submit" (click)="toggle()">
+<button data-testid="roottheme" *ngIf="showTheme" class="tema" type="submit" (click)="toggle()">
   <img src="../../../assets/img/{{ tema[0] }}.png" alt="" />
   <h4>TEMA {{ tema[1] }}</h4>
 </button>

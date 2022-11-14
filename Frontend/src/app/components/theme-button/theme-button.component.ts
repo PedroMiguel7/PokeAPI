@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ThemeButtonComponent implements OnInit {
   public tema: Array<string> = ['moon', 'DARK'];
 
+  showTheme: boolean = false;
   constructor() {}
 
   ngOnInit(): void {}

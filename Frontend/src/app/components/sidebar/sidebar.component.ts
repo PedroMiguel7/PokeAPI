@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 export class SidebarComponent implements OnInit {
   constructor(private router: Router) {}
 
+  showSidebar: boolean = false;
+
   ngOnInit(): void {}
 
   iconFav() {

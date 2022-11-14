@@ -1,22 +1,35 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PokebollComponent } from './pokeboll.component';
+import { render, screen } from '@testing-library/angular';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import {
+  NoopAnimationsModule,
+  BrowserAnimationsModule,
+} from '@angular/platform-browser/animations';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+
+const sut = async () => {
+  await render(PokebollComponent, {
+    imports: [
+      BrowserModule,
+      AppRoutingModule,
+      HttpClientModule,
+      NoopAnimationsModule,
+      FormsModule,
+      ReactiveFormsModule,
+      BrowserAnimationsModule,
+    ],
+  });
+};
 
 describe('PokebollComponent', () => {
-  let component: PokebollComponent;
-  let fixture: ComponentFixture<PokebollComponent>;
-
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [PokebollComponent],
-    }).compileComponents();
-
-    fixture = TestBed.createComponent(PokebollComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    await sut();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should render the component', async () => {
+    const element = screen.getByTestId('rootpokeboll');
+    expect(element).toBeTruthy();
   });
 });
