@@ -8,9 +8,9 @@ import { SearchComponent } from './pages/search/search.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
-  {path: 'favoritos', canActivate: [GuardaAuthService], component: FavoritesComponent},
-  {path: 'todos', canActivate: [GuardaAuthService], component: HomeComponent},
-  {path: 'procurar', canActivate: [GuardaAuthService], component: SearchComponent},
+  {path: 'favoritos', component: FavoritesComponent},
+  {path: 'todos', component: HomeComponent},
+  {path: 'procurar', component: SearchComponent},
   {path: '**', redirectTo: ''}
 ];
 

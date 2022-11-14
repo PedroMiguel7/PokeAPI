@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main" data-testid="rootmain">
   <div id="stars"></div>
   <div id="stars2"></div>
   <div id="stars3"></div>
@@ -7,12 +7,7 @@
     <div class="loginCashier">
       <img src="../../../assets/img/image 1.png" alt="" />
       <h1>Comece a coletar pokémons!</h1>
-      <form
-        data-testid="rootmain"
-        class="forms"
-        [formGroup]="validateForm"
-        (ngSubmit)="fazLogin()"
-      >
+      <form class="forms" [formGroup]="validateForm" (ngSubmit)="fazLogin()">
         <input
           formControlName="email"
           type="text"
