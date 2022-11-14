@@ -16,7 +16,7 @@
 - A system for Login and management of a user's pokemóns, the system must register Users and favorite Pokemóns, a user has Favorite Pokemóns.
 
 - It was developed with [NodeJs](https://nodejs.org/en/), [TypeORM](https://typeorm.io/) and [PostgreSQL](https://www.postgresql.org);
-- The API and Database are not being maintained yet.
+- The API and Database are not being maintained yet. https://render.com/
 - Documentation and testing of routes was done in swagger [swagger](https://app.swaggerhub.com/apis/PedroMiguel7/pokedeks_backend/1.0.0).
 
 # Functionalities
