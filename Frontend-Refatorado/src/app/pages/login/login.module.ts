@@ -8,6 +8,7 @@ import { LoginRoutingModule } from './login-routing.module';
   declarations: [],
   imports: [
     CommonModule,
+    SharedModule,
     LoginRoutingModule
   ]
 })
